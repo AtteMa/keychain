@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+    </tr>
+    {% for password in passwords %}
+    <tr>
+      <td>{{ password.username }}</td>
+      <td>{{ password.password }}</td>
+      <td>
+        <form method="GET" action="{{ url_for('passwords_update',
+                password_id = password.id) }}">
+            <input type="submit" value="Update"/>
+        </form>
+      </td>
+      
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('passwords_updateAccount',
+password_id = password.id) }}">
+    <label>New Username</label>
+    <input type="text" name="username"/>
+    <label>New Password</label>
+    <input type="text" name="password"/>
+    <input type="submit" value="Update credentials"/>
+</form>
+{% endblock %}

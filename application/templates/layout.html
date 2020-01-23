@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Keychain</title>
+    </head>
+
+    <body>
+        <ul>
+            <li><a href="{{ url_for('passwords_index') }}">List all saved account details</a></li>
+            <li><a href="{{ url_for('passwords_form') }}">Add new account details</a></li>
+        </ul>
+        
+        {% block  body %}
+            <p>
+                Content.
+            </p>
+        {% endblock %}
+    </body>
+</html>
