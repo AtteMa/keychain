@@ -6,10 +6,17 @@
     </head>
 
     <body>
+        {% if current_user.is_authenticated %}
+        <p>
+            Logged in as {{ current_user.name }}. <a href="{{ url_for('account_logout') }}">Log out</a>
+        </p>
         <ul>
             <li><a href="{{ url_for('passwords_index') }}">List all saved account details</a></li>
             <li><a href="{{ url_for('passwords_form') }}">Add new account details</a></li>
         </ul>
+        {% else %}
+        <a href="{{ url_for('account_login') }}">Log in</a>
+        {% endif %}
         
         {% block  body %}
             <p>
