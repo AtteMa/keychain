@@ -12,6 +12,8 @@ from application import views
 from application.passwords import models
 from application.passwords import views
 
+from application.account import models
+
 db.create_all()
 
 
