@@ -1,11 +1,13 @@
-from application import app, db
 from flask import redirect, url_for, render_template, request
+from flask_login import current_user
+from application import app, db
 from application.passwords.models import accountDetails
 from application.passwords.forms import PasswordForm, UpdateForm
 
 @app.route("/passwords/", methods=["GET"])
 def passwords_index():
-    return render_template("passwords/list.html", passwords = accountDetails.query.all())
+    return render_template("passwords/list.html",
+            passwords = accountDetails.query.filter_by(account_id=current_user.id))
 
 @app.route("/passwords/<password_id>/", methods=["GET"])
 def passwords_update(password_id):
@@ -42,6 +44,7 @@ def passwords_create():
 
     p = accountDetails(form.password.data, 
         form.username.data)
+    p.account_id = current_user.id
     
     db.session().add(p)
     db.session().commit()
