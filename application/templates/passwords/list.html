@@ -16,6 +16,12 @@
             <input type="submit" value="Update"/>
         </form>
       </td>
+      <td>
+        <form method="GET" action="{{ url_for('passwords_delete',
+                password_id = password.id) }}">
+            <input type="submit" value="Delete"/>
+        </form>
+      </td>
       
     </tr>
     {% endfor %}

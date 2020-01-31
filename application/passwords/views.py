@@ -9,6 +9,13 @@ def passwords_index():
     return render_template("passwords/list.html",
             passwords = accountDetails.query.filter_by(account_id=current_user.id))
 
+@app.route("/passwords/delete/<password_id>/", methods=["GET"])
+def passwords_delete(password_id):
+    p = accountDetails.query.get(password_id)
+    db.session.delete(p)
+    db.session.commit()
+    return redirect(url_for("passwords_index"))
+
 @app.route("/passwords/<password_id>/", methods=["GET"])
 def passwords_update(password_id):
     a = accountDetails.query.get(password_id)
