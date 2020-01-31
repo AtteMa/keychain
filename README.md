@@ -2,4 +2,6 @@ Keychain-sovellus jossa käyttäjä voi tallentaa palveluiden kirjautumistunnuks
 
 linkki herokuun: https://virtual-keychain.herokuapp.com/
 
+linkki käyttäjätapauksiin: https://github.com/AtteMa/keychain/blob/master/documentation/userstory.txt
+
 ![](https://github.com/AtteMa/keychain/blob/master/Tietokantakaavio.png)
