@@ -16,6 +16,7 @@
         </ul>
         {% else %}
         <a href="{{ url_for('account_login') }}">Log in</a>
+        <a href="{{ url_for('account_form') }}">Sign up</a>
         {% endif %}
         
         {% block  body %}
