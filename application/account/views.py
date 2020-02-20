@@ -37,9 +37,15 @@ def account_create():
     if not form.validate():
         return render_template("account/new.html", form = form)
 
-    p = Account(form.name.data, form.username.data, form.password.data)
+    a = Account.query.filter_by(username=form.username.data).first()
+
+    if a:
+        return render_template("account/new.html", form = form,
+            error="That username is taken!")
+
+    account = Account(form.name.data, form.username.data, form.password.data)
     
-    db.session().add(p)
+    db.session().add(account)
     db.session().commit()
 
     return redirect(url_for("index"))

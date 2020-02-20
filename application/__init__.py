@@ -18,6 +18,8 @@ from application import views
 from application.passwords import models
 from application.passwords import views
 
+from application.service import models
+
 from application.account import models
 from application.account import views
 
