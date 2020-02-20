@@ -1,0 +1,26 @@
+CREATE TABLE account (
+        id INTEGER NOT NULL, 
+        name VARCHAR(144) NOT NULL, 
+        username VARCHAR(144) NOT NULL, 
+        password VARCHAR(144) NOT NULL, 
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE service (
+        id INTEGER NOT NULL, 
+        name VARCHAR(144) NOT NULL, 
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE account_details (
+        id INTEGER NOT NULL, 
+        password VARCHAR(144) NOT NULL, 
+        username VARCHAR(144) NOT NULL, 
+        service_id INTEGER NOT NULL, 
+        account_id INTEGER NOT NULL, 
+        PRIMARY KEY (id), 
+        FOREIGN KEY(service_id) REFERENCES service (id), 
+        FOREIGN KEY(account_id) REFERENCES account (id)
+);
+
+

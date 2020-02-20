@@ -8,7 +8,7 @@ from application.passwords.forms import PasswordForm, UpdateForm
 @app.route("/passwords/", methods=["GET"])
 def passwords_index():
     return render_template("passwords/list.html",
-            passwords = accountDetails.query.filter_by(account_id=current_user.id))
+            passwords = accountDetails.query.filter_by(account_id=current_user.id).order_by(accountDetails.username))
 
 @app.route("/passwords/delete/<password_id>/", methods=["GET"])
 @login_required

@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <h3>
-        Virtual Keychain!
-    </h3>
+    {% if current_user.is_authenticated %}
+    <h3>Welcome {{ current_user.name }}!</h3>
+    {% else %}
+    <h3>Virtual Keychain!</h3>
     <h5>Here you can store all your passwords so you will never forget them again!</h5>
     <h5>Sign up to get started.</h5>
+    {% endif %}
+
 {% endblock %}

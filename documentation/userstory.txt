@@ -1,5 +1,17 @@
-Internetpalveluiden käyttäjänä haluaisin pystyä tekemään turvallisia salasanoja, mutta kuitenkin muistamaan ne.
+Internetpalveluiden käyttäjänä haluaisin pystyä tekemään turvallisia salasanoja, mutta kuitenkin muistamaan ne. toteutettu.
 
-Monien erilaisten tunnusten omistajana haluaisin pystyä hakemaan tunnuksia palvelun nimellä.
+Haluan selkeän listauksen käyttäjälleni tallennetuista tunnuksista. toteutettu.
+SELECT * FROM account_details WHERE user_id = ?;
+
+Monien erilaisten tunnusten omistajana haluaisin pystyä hakemaan tunnuksia. toteutettu.
+
+Haluan tallentaa käyttäjätunnukset viittaamaan johonkin tiettyyn palveluun. toteutettu.
+
+Haluan voida järjestää tunnuksiani aakkosjärjestykseen. toteutettu.
+SELECT * FROM account_details WHERE user_id = ? ORDER BY username ASC
+
+Haluan rajata tunnuksia kategorioittain. ei toteutettu.
+
+
 
 
