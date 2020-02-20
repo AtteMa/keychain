@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table id="t1">
+  <input class="w3-input w3-border w3-padding" type="text" placeholder="Search.." 
+    oninput="w3.filterHTML('#t1', '.item', this.value)">
+  <table id="t1" class="w3-table w3-bordered w3-border w3-margin-top">
     <tr>
-      <th onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(1)',)"
+      <th class="w3-dark-grey w3-hover-black" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(1)',)"
         style="cursor:pointer">Service provider</th>
-      <th onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(2)')"
+      <th class="w3-dark-grey w3-hover-black" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(2)')"
         style="cursor:pointer">Username</th>
-      <th onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(3)')"
+      <th class="w3-dark-grey w3-hover-black" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(3)')"
         style="cursor:pointer">Password</th>
+      <th class="w3-dark-grey"></th>
+      <th class="w3-dark-grey"></th>
     </tr>
     {% for password in passwords %}
     <tr class="item">
