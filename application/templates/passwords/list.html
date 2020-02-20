@@ -1,13 +1,18 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
+  <table id="t1">
     <tr>
-      <th>Username</th>
-      <th>Password</th>
+      <th onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(1)',)"
+        style="cursor:pointer">Service provider</th>
+      <th onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(2)')"
+        style="cursor:pointer">Username</th>
+      <th onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(3)')"
+        style="cursor:pointer">Password</th>
     </tr>
     {% for password in passwords %}
-    <tr>
+    <tr class="item">
+      <td>{{ password.service.name }}</td>
       <td>{{ password.username }}</td>
       <td>{{ password.password }}</td>
       <td>
