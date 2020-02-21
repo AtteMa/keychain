@@ -27,15 +27,16 @@ def passwords_update(password_id):
 @app.route("/passwords/<password_id>", methods=["POST"])
 @login_required
 def passwords_updateAccount(password_id):
+    formU = UpdateForm(request.form)
     a = accountDetails.query.get(password_id)
-    form = UpdateForm(request.form)
+    
+    if not formU.validate():
+        return render_template("passwords/update.html", password = a, form = formU)
 
-    if not form.validate():
-        return render_template("passwords/update.html", password = a, form = form)
+    newP = formU.password.data
+    oldAcc = accountDetails.query.get(password_id)
 
-    new = form.password.data
-    old = accountDetails.query.get(password_id)
-    old.password = new
+    oldAcc.password = newP
     
     db.session().commit()
 

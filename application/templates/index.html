@@ -2,7 +2,10 @@
 
 {% block body %}
     {% if current_user.is_authenticated %}
-    <h3>Welcome {{ current_user.name }}!</h3>
+        {% if no_saved is defined %}
+            <h5>There are total of {{ no_saved }} passwords saved accross all users!.</h5>
+            
+        {% endif %}
     {% else %}
     <h3>Virtual Keychain!</h3>
     <h5>Here you can store all your passwords so you will never forget them again!</h5>

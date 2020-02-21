@@ -4,6 +4,7 @@
 <form method="POST" action="{{ url_for('passwords_updateAccount',
 password_id = password.id) }}">
     <table>
+        
         <tr>
             <td>
                 {{ form.password.label }}
@@ -21,7 +22,7 @@ password_id = password.id) }}">
         </tr>
         <tr>
             <td colspan="3">
-                <input type="submit" value="Update password"/>
+                <input type="submit" value="Update"/>
             </td>
         </tr>
     </table>
