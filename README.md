@@ -1,4 +1,4 @@
-Keychain-sovellus jossa käyttäjä voi tallentaa palveluiden kirjautumistunnuksia yhteen paikkaan yhden salasanan alle. Antaa mahdollisuuden tallentaa, muokata ja poistaa tunnuksia. luokittelee kirjautumistunnukset kategorioittain, esim Some, eMail, Games jne. ja jokaisen kategorian alla näkyy palveluntarjoajat ja niihin liittyvät kirjautumistunnukset. Samaan palveluun voi olla myös monet eri tunnukset, eli yhden palveluntarjoajan alla voi olla monta eri tunnusta. Tosin myös samat tunnukset voivat olla käytössä monessa palvelussa.
+Keychain-sovellus jossa käyttäjä voi tallentaa palveluiden kirjautumistunnuksia yhteen paikkaan yhden salasanan alle. Antaa mahdollisuuden tallentaa, muokata ja poistaa tunnuksia. sovellukseen tehdään tunnus ja kirjaudutaan sisään. Sovellus listaa tallennetut tunnukset helppona taulukkona josta voi halutessaan järjestää tunnukset palveluntarjoajan, käyttäjänimen tai salasanan mukaan. oletuksena sovellus listaa tunnukset käyttäjänimen mukaan aakkosjärjestyksessä. sovelluksesta voi hakea tallentamiaan tunnuksia.
 
 Herokussa toimiva testikäyttäjä     
     Käyttäjätunnus: testi   
