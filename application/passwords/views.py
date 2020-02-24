@@ -14,6 +14,9 @@ def passwords_index():
 @login_required
 def passwords_delete(password_id):
     p = accountDetails.query.get(password_id)
+    p.service_id = password_id
+    s = Service.query.get(p.service_id)
+    db.session.delete(s)
     db.session.delete(p)
     db.session.commit()
     return redirect(url_for("passwords_index"))
