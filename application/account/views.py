@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user
+from flask_login import current_user, login_user, logout_user
 
 from application import app, db
 from application.account.models import Account
@@ -19,7 +19,7 @@ def account_login():
             error = "No such username of password")
 
     login_user(account)
-    return redirect(url_for("index"))
+    return redirect(url_for("index", find_services=Account.find_distinct_services(current_user.id)))
 
 @app.route("/account/logout")
 def account_logout():

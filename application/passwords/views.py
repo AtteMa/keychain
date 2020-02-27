@@ -2,6 +2,7 @@ from flask import redirect, url_for, render_template, request
 from flask_login import current_user, login_required
 from application import app, db
 from application.passwords.models import accountDetails
+from application.account.models import Account
 from application.service.models import Service
 from application.passwords.forms import PasswordForm, UpdateForm
 
@@ -32,14 +33,20 @@ def passwords_update(password_id):
 def passwords_updateAccount(password_id):
     formU = UpdateForm(request.form)
     a = accountDetails.query.get(password_id)
+    s = Service.query.get(a.service_id)
     
     if not formU.validate():
-        return render_template("passwords/update.html", password = a, form = formU)
+        return render_template("passwords/update.html", password = a, username=a.username, service=s, form = formU)
 
     newP = formU.password.data
+    newU = formU.username.data
+    newS = formU.service.data
     oldAcc = accountDetails.query.get(password_id)
+    oldSer = Service.query.get(oldAcc.service_id)
 
     oldAcc.password = newP
+    oldAcc.username = newU
+    oldSer.name = newS
     
     db.session().commit()
 

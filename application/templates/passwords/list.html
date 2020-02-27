@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
-
+<h5>moi</h5>
 {% block body %}
   <input class="w3-input w3-border w3-padding" type="text" placeholder="Search.." 
     oninput="w3.filterHTML('#t1', '.item', this.value)">
   <table id="t1" class="w3-table w3-bordered w3-border w3-margin-top">
     <tr>
-      <th class="w3-dark-grey w3-hover-black" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(1)',)"
+      <th class="w3-aqua w3-hover-cyan" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(1)',)"
         style="cursor:pointer">Service provider</th>
-      <th class="w3-dark-grey w3-hover-black" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(2)')"
+      <th class="w3-aqua w3-hover-cyan" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(2)')"
         style="cursor:pointer">Username</th>
-      <th class="w3-dark-grey w3-hover-black" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(3)')"
+      <th class="w3-aqua w3-hover-cyan" onclick="w3.sortHTML('#t1', '.item', 'td:nth-child(3)')"
         style="cursor:pointer">Password</th>
-      <th class="w3-dark-grey"></th>
-      <th class="w3-dark-grey"></th>
+      <th class="w3-aqua"></th>
+      <th class="w3-aqua"></th>
     </tr>
     {% for password in passwords %}
     <tr class="item">

@@ -1,1 +1,1 @@
- 
+ Monesta moneen yhteys taulujen account_details ja service välillä olisi ollut hyvä lisäys. Ajan puutteen takia se jäi toteuttamatta.

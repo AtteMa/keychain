@@ -10,7 +10,9 @@ class PasswordForm(FlaskForm):
         csrf = False
 
 class UpdateForm(FlaskForm):
-    password = StringField("New password", [validators.Length(min=1, max=35)])
+    service = StringField("Service", [validators.Length(min=1, max=35)])
+    username = StringField("Username", [validators.Length(min=1, max=35)])
+    password = StringField("Password", [validators.Length(min=1, max=35)])
 
     class Meta:
         csrf = False
